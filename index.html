@@ -6,7 +6,7 @@
   <title>Full Solutions - IT Infrastructure & Smart Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0082FB;
@@ -17,413 +17,136 @@
       --white: #FFFFFF;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background-color: var(--white); line-height: 1.6; }
 
-    body {
-      font-family: 'Inter', 'Cairo', sans-serif;
-      color: var(--text);
-      background-color: var(--white);
-      line-height: 1.6;
-    }
-
-    /* Header & Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .logo-img {
-      height: 45px;
-      width: auto;
-    }
-
-    .brand-text {
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: var(--navy);
-    }
-
-    .brand-text span {
-      color: var(--primary);
-    }
-
+    /* Header */
+    header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-img { height: 45px; width: auto; }
+    .brand-text { font-weight: 700; font-size: 1.4rem; color: var(--navy); }
+    .brand-text span { color: var(--primary); }
+    
     .lang-btn {
       background-color: var(--primary);
       color: var(--white);
-      border: none;
+      text-decoration: none;
       padding: 0.5rem 1.2rem;
       border-radius: 6px;
       font-weight: 600;
-      cursor: pointer;
       transition: background 0.3s ease;
     }
-
-    .lang-btn:hover {
-      background-color: #0069cc;
-    }
+    .lang-btn:hover { background-color: #0069cc; }
 
     /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
-      color: var(--white);
-      padding: 6rem 2rem;
-      text-align: center;
-    }
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%); color: var(--white); padding: 6rem 2rem; text-align: center; }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 1.2rem; font-weight: 700; }
+    .hero p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 2rem; }
+    .cta-btn { display: inline-block; background: var(--primary); color: var(--white); padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
 
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #94A3B8;
-      margin-bottom: 2rem;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: var(--white);
-      padding: 0.8rem 2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.3s;
-    }
-
-    .cta-btn:hover {
-      opacity: 0.9;
-    }
-
-    /* Container */
-    .section-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.2rem;
-      color: var(--navy);
-      margin-bottom: 3rem;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      margin: 0.5rem auto 0;
-      border-radius: 2px;
-    }
-
-    /* Services Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: var(--light-bg);
-      padding: 2.5rem 2rem;
-      border-radius: 12px;
-      border: 1px solid #E2E8F0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 130, 251, 0.1);
-    }
-
-    .service-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    .service-card h3 {
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin-bottom: 0.8rem;
-    }
-
-    .service-card p {
-      color: #64748B;
-      font-size: 0.95rem;
-    }
+    /* Services Section */
+    .section-container { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-title { text-align: center; font-size: 2.2rem; color: var(--navy); margin-bottom: 3rem; }
+    .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 0.5rem auto 0; border-radius: 2px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .service-card { background: var(--light-bg); padding: 2.5rem 2rem; border-radius: 12px; border: 1px solid #E2E8F0; transition: transform 0.3s ease; }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 0.8rem; }
+    .service-card p { color: #64748B; font-size: 0.95rem; }
 
     /* Contact Section */
-    .contact-section {
-      background-color: var(--light-bg);
-      border-top: 1px solid #E2E8F0;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-item {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid #E2E8F0;
-      text-align: center;
-    }
-
-    .contact-item h4 {
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-item a, .contact-item p {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
+    .contact-section { background-color: var(--light-bg); border-top: 1px solid #E2E8F0; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .contact-item { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid #E2E8F0; text-align: center; }
+    .contact-item h4 { color: var(--navy); margin-bottom: 0.5rem; }
+    .contact-item a, .contact-item p { color: var(--primary); text-decoration: none; font-weight: 600; }
 
     /* Footer */
-    footer {
-      background: var(--dark);
-      color: #94A3B8;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-    }
-
-    /* RTL Styles */
-    [dir="rtl"] {
-      font-family: 'Cairo', sans-serif;
-    }
+    footer { background: var(--dark); color: #94A3B8; text-align: center; padding: 2rem; font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <header>
     <div class="nav-container">
-      <a href="#" class="brand">
-        <!-- Logo Image Placeholder (Replace logo.jpg with your hosted file path) -->
+      <a href="index.html" class="brand">
         <img src="logo.jpg" alt="Full Solutions Logo" class="logo-img" onerror="this.style.display='none'" />
         <div class="brand-text">FULL <span>SOLUTIONS</span></div>
       </a>
-      <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">العربية</button>
+      <a href="ar.html" class="lang-btn">العربية</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1 id="heroTitle">Complete IT Infrastructure & Smart Technology</h1>
-      <p id="heroDesc">Providing full-scope IT support, server infrastructure, advanced security, and smart automation for businesses and residences.</p>
-      <a href="#contact" class="cta-btn" id="heroCta">Contact Us</a>
+      <h1>Complete IT Infrastructure & Smart Technology</h1>
+      <p>Providing full-scope IT support, server infrastructure, advanced security, and smart automation for businesses and residences.</p>
+      <a href="#contact" class="cta-btn">Contact Us</a>
     </div>
   </section>
 
-  <!-- Services Section -->
   <section class="section-container">
-    <h2 class="section-title" id="servicesTitle">Our Services</h2>
+    <h2 class="section-title">Our Services</h2>
     <div class="services-grid">
-      
       <div class="service-card">
         <div class="service-icon">🛠️</div>
-        <h3 id="s1Title">Full IT Support & Infrastructure</h3>
-        <p id="s1Desc">End-to-end technical support, system maintenance, and network setup tailored to your operational needs.</p>
+        <h3>Full IT Support & Infrastructure</h3>
+        <p>End-to-end technical support, system maintenance, and network setup tailored to your operational needs.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">🖥️</div>
-        <h3 id="s2Title">Server Deployment & Configuration</h3>
-        <p id="s2Desc">Designing, installing, and maintaining custom enterprise servers to keep your business running seamlessly.</p>
+        <h3>Server Deployment & Configuration</h3>
+        <p>Designing, installing, and maintaining custom enterprise servers to keep your business running seamlessly.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">📹</div>
-        <h3 id="s3Title">Surveillance Camera Systems</h3>
-        <p id="s3Desc">Professional CCTV and IP security camera installations with remote access for homes and commercial facilities.</p>
+        <h3>Surveillance Camera Systems</h3>
+        <p>Professional CCTV and IP security camera installations with remote access for homes and commercial facilities.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">🛡️</div>
-        <h3 id="s4Title">Firewall & Cyber Security</h3>
-        <p id="s4Desc">Deployment of advanced firewall solutions and security protocols for maximum data protection.</p>
+        <h3>Firewall & Cyber Security</h3>
+        <p>Deployment of advanced firewall solutions and security protocols for maximum data protection.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">📞</div>
-        <h3 id="s5Title">Call Center Systems</h3>
-        <p id="s5Desc">Complete call center software and hardware solutions engineered for effective client communication.</p>
+        <h3>Call Center Systems</h3>
+        <p>Complete call center software and hardware solutions engineered for effective client communication.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">🏠</div>
-        <h3 id="s6Title">Smart Home & Office Automation</h3>
-        <p id="s6Desc">Cutting-edge smart technology integration for modern homes and automated commercial spaces.</p>
+        <h3>Smart Home & Office Automation</h3>
+        <p>Cutting-edge smart technology integration for modern homes and automated commercial spaces.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact-section" id="contact">
     <div class="section-container">
-      <h2 class="section-title" id="contactTitle">Get In Touch</h2>
+      <h2 class="section-title">Get In Touch</h2>
       <div class="contact-grid">
-        
         <div class="contact-item">
-          <h4 id="addressHeading">Headquarters</h4>
-          <p id="addressText">Cairo, Mokattam, Street 9</p>
+          <h4>Headquarters</h4>
+          <p>Cairo, Mokattam, Street 9</p>
         </div>
-
         <div class="contact-item">
-          <h4 id="phoneHeading">Phone / WhatsApp</h4>
+          <h4>Phone / WhatsApp</h4>
           <a href="tel:+201155513300">+20 115 551 3300</a>
         </div>
-
         <div class="contact-item">
-          <h4 id="emailHeading">Email Address</h4>
+          <h4>Email Address</h4>
           <a href="mailto:Info@full-solutions.net">Info@full-solutions.net</a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p id="footerText">&copy; 2026 Full Solutions. All Rights Reserved.</p>
+    <p>&copy; 2026 Full Solutions. All Rights Reserved.</p>
   </footer>
 
-  <!-- Language Switcher Script -->
-  <script>
-    const translations = {
-      en: {
-        langBtn: "العربية",
-        dir: "ltr",
-        heroTitle: "Complete IT Infrastructure & Smart Technology",
-        heroDesc: "Providing full-scope IT support, server infrastructure, advanced security, and smart automation for businesses and residences.",
-        heroCta: "Contact Us",
-        servicesTitle: "Our Services",
-        s1Title: "Full IT Support & Infrastructure",
-        s1Desc: "End-to-end technical support, system maintenance, and network setup tailored to your operational needs.",
-        s2Title: "Server Deployment & Configuration",
-        s2Desc: "Designing, installing, and maintaining custom enterprise servers to keep your business running seamlessly.",
-        s3Title: "Surveillance Camera Systems",
-        s3Desc: "Professional CCTV and IP security camera installations with remote access for homes and commercial facilities.",
-        s4Title: "Firewall & Cyber Security",
-        s4Desc: "Deployment of advanced firewall solutions and security protocols for maximum data protection.",
-        s5Title: "Call Center Systems",
-        s5Desc: "Complete call center software and hardware solutions engineered for effective client communication.",
-        s6Title: "Smart Home & Office Automation",
-        s6Desc: "Cutting-edge smart technology integration for modern homes and automated commercial spaces.",
-        contactTitle: "Get In Touch",
-        addressHeading: "Headquarters",
-        addressText: "Cairo, Mokattam, Street 9",
-        phoneHeading: "Phone / WhatsApp",
-        emailHeading: "Email Address",
-        footerText: "© 2026 Full Solutions. All Rights Reserved."
-      },
-      ar: {
-        langBtn: "English",
-        dir: "rtl",
-        heroTitle: "حلول متكاملة للبنية التحتية والتكنولوجيا الذكية",
-        heroDesc: "نقدم الدعم الفني الشامل، وتجهيز السيرفرات، والأنظمة الأمنية، والحلول الذكية للشركات والمنازل.",
-        heroCta: "تواصل معنا",
-        servicesTitle: "خدماتنا",
-        s1Title: "الدعم الفني والبنية التحتية",
-        s1Desc: "تقديم الدعم الفني الشامل وإدارة الشبكات وصيانتها لتلبية جميع احتياجات شركتك.",
-        s2Title: "تأسيس وبرمجة السيرفرات",
-        s2Desc: "تصميم وتثبيت السيرفرات الخاصة بالشركات لضمان استقرار وسرعة إدارة البيانات.",
-        s3Title: "تركيب كاميرات المراقبة",
-        s3Desc: "تركيب أحدث أنظمة كاميرات المراقبة (CCTV & IP) للمنازل والشركات مع إمكانية المتابعة عن بُعد.",
-        s4Title: "جدران الحماية والأمان الرقمي",
-        s4Desc: "تركيب أنظمة Firewall المتقدمة لحماية بيانات شركتك من أي اختراقات أمنية.",
-        s5Title: "أنظمة الكول سنتر",
-        s5Desc: "تجهيز وتأسيس أنظمة الاتصالات والكول سنتر بالكامل لسهولة التواصل مع عملائك.",
-        s6Title: "الأنظمة والبيوت الذكية",
-        s6Desc: "تركيب وتأسيس تكنولوجيا المنازل والشركات الذكية للتحكم الكامل بأحدث التقنيات.",
-        contactTitle: "تواصل معنا",
-        addressHeading: "المقر الرئيسي",
-        addressText: "القاهرة، المقطم، شارع 9",
-        phoneHeading: "الهاتف / واتساب",
-        emailHeading: "البريد الإلكتروني",
-        footerText: "© 2026 جميع الحقوق محفوظة لشركة فول سوليوشنز."
-      }
-    };
-
-    let currentLang = "en";
-
-    function toggleLanguage() {
-      currentLang = currentLang === "en" ? "ar" : "en";
-      const t = translations[currentLang];
-
-      document.documentElement.lang = currentLang;
-      document.documentElement.dir = t.dir;
-
-      document.getElementById("langToggle").innerText = t.langBtn;
-      document.getElementById("heroTitle").innerText = t.heroTitle;
-      document.getElementById("heroDesc").innerText = t.heroDesc;
-      document.getElementById("heroCta").innerText = t.heroCta;
-      document.getElementById("servicesTitle").innerText = t.servicesTitle;
-      
-      document.getElementById("s1Title").innerText = t.s1Title;
-      document.getElementById("s1Desc").innerText = t.s1Desc;
-      document.getElementById("s2Title").innerText = t.s2Title;
-      document.getElementById("s2Desc").innerText = t.s2Desc;
-      document.getElementById("s3Title").innerText = t.s3Title;
-      document.getElementById("s3Desc").innerText = t.s3Desc;
-      document.getElementById("s4Title").innerText = t.s4Title;
-      document.getElementById("s4Desc").innerText = t.s4Desc;
-      document.getElementById("s5Title").innerText = t.s5Title;
-      document.getElementById("s5Desc").innerText = t.s5Desc;
-      document.getElementById("s6Title").innerText = t.s6Title;
-      document.getElementById("s6Desc").innerText = t.s6Desc;
-
-      document.getElementById("contactTitle").innerText = t.contactTitle;
-      document.getElementById("addressHeading").innerText = t.addressHeading;
-      document.getElementById("addressText").innerText = t.addressText;
-      document.getElementById("phoneHeading").innerText = t.phoneHeading;
-      document.getElementById("emailHeading").innerText = t.emailHeading;
-      document.getElementById("footerText").innerText = t.footerText;
-    }
-  </script>
 </body>
 </html>
